@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarju's University Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        p {
+            color: #555;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #388E3C;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Sarju's University Work
+    </header>
+
+    <section>
+        <h2>Assignments</h2>
+        <p>This page will contain links to my assignments.</p>
+        <ul id="assignments-list">
+            <!-- Assignment links will be added here -->
+        </ul>
+        <button onclick="addAssignment()">Add Assignment</button>
+    </section>
+
+    <script>
+        function addAssignment() {
+            const title = prompt("Enter assignment title:");
+            const link = prompt("Enter assignment link (URL):");
+
+            if (title && link) {
+                const assignmentsList = document.getElementById("assignments-list");
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = link;
+                a.textContent = title;
+                a.target = "_blank"; // Open in a new tab
+                li.appendChild(a);
+                assignmentsList.appendChild(li);
+            } else {
+                alert("Both title and link are required!");
+            }
+        }
+    </script>
+
+</body>
+</html>
